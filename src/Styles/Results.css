@@ -1,0 +1,109 @@
+#resultContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    gap: 20px;
+    padding: 5px 10px;
+}
+
+.itemCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px 2px #ccc;
+    text-align: center;
+    padding: 1rem 0rem;
+    background-color: #fcfcfc;
+    font-family: 'Russo One', sans-serif;
+}
+
+.itemCard__img {
+    width: 100%;
+}
+
+.itemCard__title {
+    padding-top: .25rem;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.itemCard__price {
+    font-size: 18px;
+}
+
+.itemCard__price__reduction {
+    text-decoration: line-through;
+}
+
+.sale-price {
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+}
+
+.price-reduction-zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 50%;
+}
+
+.add-to-cart {
+    background-color: #c40404;
+    padding: .5rem;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #888;
+    font-size: 1rem;
+    width: 50%;
+    border-radius: .5rem;
+}
+
+
+.add-to-cart:hover {
+    background-color: #ffcd00;
+    cursor: pointer;
+    color: black;
+}
+
+.no-search-heading {
+    text-align: center;
+    width: 99vw;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    padding: 1rem 2rem;
+}
+
+@media screen and (max-width: 968px) {
+    #resultContainer {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .add-to-cart {
+        font-size: .8rem;
+    }
+
+    .itemCard__title {
+        font-size: 16px;
+    }
+
+    .itemCard__price {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    #resultContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .no-search-heading {
+        font-size: 1.6rem;
+
+    }
+}

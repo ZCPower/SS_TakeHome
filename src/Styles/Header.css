@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: #c40404;
+}
+
+header img {
+    width: 30px;
+}
+
+.items_in_cart {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Russo One', sans-serif;
+}
+
+.items_in_cart p {
+    font-size: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.logo img {
+    width: 2.8rem;
+}
+
+form {
+    background-color: #ffcd00;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: .5rem;
+    width: 55%;
+}
+
+form button {
+    color: white;
+    padding: 0 0.3rem;
+}
+
+form button img {
+    width: 1.2rem;
+}
+
+@media screen and (max-width: 968px) {
+    input {
+        width: 60%;
+    }
+}
