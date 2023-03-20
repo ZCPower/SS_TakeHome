@@ -55,6 +55,10 @@ input {
 form button {
     color: white;
     padding: 0 0.3rem;
+    /* removes iPhone default styles. */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 form button img {
@@ -86,5 +90,9 @@ form button img {
 
     .items-in-cart img {
         width: 1.5rem;
+    }
+
+    input {
+        font-size: 0.7rem;
     }
 }
