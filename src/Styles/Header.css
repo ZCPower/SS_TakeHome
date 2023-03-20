@@ -11,6 +11,7 @@ header {
 h1 {
     font-size: 2.4rem;
     color: #c40404;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 header img {
@@ -21,7 +22,6 @@ header img {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Russo One', sans-serif;
 }
 
 .items-in-cart p {
@@ -49,6 +49,7 @@ input {
     font-size: 1rem;
     padding: .5rem;
     width: 55%;
+    font-family: 'Russo One', sans-serif;
 }
 
 form button {
