@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    font-size: 1.2rem;
+
     padding: 0.25rem 1rem;
 }
 
@@ -24,8 +24,15 @@
 
 .pagination-container h3 {
     justify-self: center;
+    font-size: 1.2rem;
 }
 
 .placeholder {
     padding: 0rem 2rem;
+}
+
+@media screen and (max-width: 680px) {
+    .pagination-container h3 {
+        font-size: 1rem;
+    }
 }
