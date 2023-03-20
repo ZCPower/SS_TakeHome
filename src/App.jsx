@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './App.css'
 import './Styles/Results.css'
@@ -14,30 +14,34 @@ function App() {
   const [currPage, setCurrPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
+  useEffect(() => {
+    async function searchForItem() {
+
+      await searchItem(searchQuery, currPage)
+        .then(async (result) => {
+          setResults(result.results)
+          setTotalPages(result.pagination.totalPages)
+
+        })
+    }
+    searchForItem()
+  }, [finalQuery, currPage])
+
 
   function handleSearchChange(e) {
     e.preventDefault();
     setSearchQuery(e.target.value);
   }
 
-  async function searchForItem(e) {
+  function submitFinalQuery(e) {
     e.preventDefault();
-    setFinalQuery(searchQuery)
-
-    await searchItem(searchQuery, currPage)
-      .then(async (result) => {
-        setResults(result.results)
-        setTotalPages(result.pagination.totalPages)
-        setCurrPage(1);
-      })
+    setFinalQuery(searchQuery);
+    setCurrPage(1);
   }
-
 
   function addToCart() {
     setCartItems(prevState => prevState + 1);
   }
-
-
 
   let resultMap = results.map(x => {
 
@@ -57,13 +61,13 @@ function App() {
       <Header cartItems={cartItems} />
       <form  >
         <input placeholder='Search for Brand, Color, Size...' onChange={handleSearchChange}></input>
-        <button onClick={searchForItem}><img src='https://cdn-icons-png.flaticon.com/128/49/49116.png'></img></button>
+        <button onClick={submitFinalQuery}><img src='https://cdn-icons-png.flaticon.com/128/49/49116.png'></img></button>
       </form>
-      {results.length ? <Pagination currPage={currPage} searchQuery={searchQuery} setCurrPage={setCurrPage} setResults={setResults} totalPages={totalPages} finalQuery={finalQuery} /> : null}
+      {results.length ? <Pagination currPage={currPage} setCurrPage={setCurrPage} setResults={setResults} totalPages={totalPages} finalQuery={finalQuery} /> : null}
       <div id='resultContainer'>
         {results.length ? resultMap : <h2 className='no-search-heading'>No items found with that query. Try a different search!</h2>}
       </div>
-      {results.length ? <Pagination currPage={currPage} searchQuery={searchQuery} setCurrPage={setCurrPage} setResults={setResults} totalPages={totalPages} finalQuery={finalQuery} /> : null}
+      {results.length ? <Pagination currPage={currPage} setCurrPage={setCurrPage} setResults={setResults} totalPages={totalPages} finalQuery={finalQuery} /> : null}
     </div>
   )
 }

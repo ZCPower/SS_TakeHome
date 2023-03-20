@@ -1,24 +1,13 @@
 import React from 'react'
 import '../Styles/Pagination.css'
-import { searchItem } from '../API';
 
-function Pagination({ currPage, setCurrPage, searchQuery, setResults, totalPages, finalQuery }) {
+function Pagination({ currPage, setCurrPage, totalPages, finalQuery }) {
     async function nextPage() {
         setCurrPage(prevState => prevState + 1);
-        await searchItem(searchQuery, currPage)
-            .then(async (result) => {
-                setResults(result.results)
-            })
     }
 
     async function prevPage() {
-
-        setCurrPage(prevState => prevState - 1);
-        if (currPage <= 1) setCurrPage(1)
-        await searchItem(searchQuery, currPage)
-            .then(async (result) => {
-                setResults(result.results)
-            })
+        setCurrPage(currPage - 1);
     }
 
     return (
