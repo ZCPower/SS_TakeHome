@@ -1,6 +1,3 @@
-;
-
-
 export async function searchItem(q, page = 1) {
     const url = `https://scmq7n.a.searchspring.io/api/search/search.json?siteId=scmq7n&resultsFormat=native&q=${q}&redirectResponse=minimal&page=${page}&resultsPerPage=24`
     try {

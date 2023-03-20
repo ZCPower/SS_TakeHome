@@ -17,14 +17,14 @@ header img {
     width: 30px;
 }
 
-.items_in_cart {
+.items-in-cart {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-family: 'Russo One', sans-serif;
 }
 
-.items_in_cart p {
+.items-in-cart p {
     font-size: 1.5rem;
 }
 

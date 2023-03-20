@@ -8,7 +8,7 @@ function Header({ cartItems }) {
                 <h1>Sunrise</h1><img src='https://cdn-icons-png.flaticon.com/128/733/733740.png'></img> <h1>Style</h1>
 
             </div>
-            <div className='items_in_cart'>
+            <div className='items-in-cart'>
                 <img src='https://cdn-icons-png.flaticon.com/128/2838/2838838.png'></img>
                 <p>{cartItems}</p>
             </div>

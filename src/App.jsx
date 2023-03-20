@@ -46,10 +46,10 @@ function App() {
   let resultMap = results.map(x => {
 
     return (
-      <div className='itemCard'>
-        <img className='itemCard__img' src={x.imageUrl}></img>
-        <h2 className='itemCard__title'>{x.title}</h2>
-        {x.price < x.msrp ? <div className='price-reduction-zone'><p className='itemCard__price__reduction itemCard__price'>${x.msrp}</p> <p className='itemCard__price sale-price'>${x.price}</p></div> : <p className='itemCard__price'>${x.price}</p>}
+      <div className='item-card'>
+        <img className='item-card-img' src={x.imageUrl}></img>
+        <h2 className='item-card-title'>{x.title}</h2>
+        {x.price < x.msrp ? <div className='price-reduction-zone'><p className='item-card-price-reduction item-card-price'>${x.msrp}</p> <p className='item-card-price sale-price'>${x.price}</p></div> : <p className='item-card-price'>${x.price}</p>}
         <button onClick={addToCart} className='add-to-cart'>Add to Cart + </button>
       </div>
     )
@@ -64,7 +64,7 @@ function App() {
         <button onClick={submitFinalQuery}><img src='https://cdn-icons-png.flaticon.com/128/49/49116.png'></img></button>
       </form>
       {results.length ? <Pagination currPage={currPage} setCurrPage={setCurrPage} setResults={setResults} totalPages={totalPages} finalQuery={finalQuery} /> : null}
-      <div id='resultContainer'>
+      <div id='result-container'>
         {results.length ? resultMap : <h2 className='no-search-heading'>No items found with that query. Try a different search!</h2>}
       </div>
       {results.length ? <Pagination currPage={currPage} setCurrPage={setCurrPage} setResults={setResults} totalPages={totalPages} finalQuery={finalQuery} /> : null}
