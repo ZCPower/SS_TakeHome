@@ -68,6 +68,22 @@ form button img {
 
 @media screen and (max-width: 680px) {
     h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .logo img {
+        width: 2.2rem;
+    }
+
+    .items-in-cart p {
+        font-size: 1.2rem;
+    }
+
+    .items-in-cart img {
+        width: 1.5rem;
     }
 }
