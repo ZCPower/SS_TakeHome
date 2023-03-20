@@ -1,7 +1,7 @@
 #resultContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    place-items: center;
+    grid-auto-rows: 1fr;
     gap: 20px;
     padding: 5px 10px;
 }
@@ -21,7 +21,8 @@
 }
 
 .itemCard__img {
-    width: 100%;
+    width: 90%;
+    object-fit: cover;
 }
 
 .itemCard__title {
